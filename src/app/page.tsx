@@ -35,7 +35,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-          
+      
+      <div className="container px-4 py-6 mx-auto flex-1">
+        <div className="flex justify-end mb-6">
           <div className="flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
