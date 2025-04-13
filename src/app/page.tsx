@@ -2,17 +2,6 @@
 
 import { useState } from "react";
 import { Task, tasks as initialTasks, users } from "@/lib/data";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { LogOut, Settings, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { DashboardStats } from "@/components/DashboardStats";
 import { MonthlyOverviewChart } from "@/components/MonthlyOverviewChart";
 import { RecentSales } from "@/components/RecentSales";
@@ -25,8 +14,6 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
-  // Use the first user as the current user for demo purposes
-  const currentUser = users[0];
 
   const handleAddTask = (newTask: Task) => {
     setTasks([...tasks, newTask]);
@@ -37,43 +24,6 @@ export default function Home() {
       <NavBar />
       
       <div className="container px-4 py-6 mx-auto flex-1">
-        <div className="flex justify-end mb-6">
-          <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage src={currentUser.image} alt={currentUser.name} />
-                    <AvatarFallback>{currentUser.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">{currentUser.name}</p>
-                    <p className="text-xs leading-none text-muted-foreground">{currentUser.email}</p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Settings className="mr-2 h-4 w-4" />
-                  <span>Settings</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
-
         <Tabs defaultValue="overview" className="space-y-6">
           <TabsList>
             <TabsTrigger value="overview">Overview</TabsTrigger>
