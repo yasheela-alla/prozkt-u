@@ -35,10 +35,6 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-      
-      <div className="flex-grow container mx-auto px-4 py-6">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">Dashboard</h1>
           
           <div className="flex items-center gap-2">
             <DropdownMenu>
