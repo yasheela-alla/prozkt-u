@@ -36,17 +36,6 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <NavBar />
 
-      <div className="flex-1 p-6 pb-8 pt-6 space-y-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="flex flex-col space-y-1.5">
-              <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-              <p className="text-muted-foreground">
-                Track your project stats, revenue, and team performance.
-              </p>
-            </div>
-          </div>
-
           <div className="flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
